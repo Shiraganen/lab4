@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Athlete</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+        
+</head>
+<body>
+    <div class="container">
+        <h1>Add Athlete</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter athlete's name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Enter athlete's age" required>
+
+            <label for="sport">Sport:</label>
+            <select id="sport" name="sport">
+                <option value="Football">Football</option>
+                <option value="Basketball">Basketball</option>
+                <option value="Swimming">Swimming</option>
+                <option value="Athletics">Athletics</option>
+            </select>
+
+            <button type="submit">Add Athlete</button>
+        </form>
+        <div class="back-link">
+            <a href="{% url 'home' %}">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
+

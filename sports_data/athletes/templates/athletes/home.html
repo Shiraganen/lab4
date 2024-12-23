@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athletes Management</title>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Athletes Management</h1>
+</header>
+
+<nav>
+    <a href="{% url 'add_athlete' %}">Add Athlete</a>
+    <a href="{% url 'upload_file' %}">Upload File</a>
+    <a href="{% url 'list_files' %}">List Files</a>
+</nav>
+
+<main>
+    <h2>Welcome to the Future of Athlete Management</h2>
+    <p>Take control of your athlete data with ease and elegance.</p>
+    <ul>
+        <li><strong>Add Athletes:</strong> Seamlessly add and save new athlete details.</li>
+        <li><strong>Upload Data:</strong> Effortlessly upload JSON or XML files for analysis.</li>
+        <li><strong>View Files:</strong> Quickly access and manage all uploaded files.</li>
+    </ul>
+    <p>Your journey to smarter athlete management starts here!</p>
+</main>
+
+<footer>
+    <p>&copy; 2024 Athletes Management. Made with ❤️ and Django.</p>
+    <p><a href="https://www.djangoproject.com/" target="_blank">Powered by Django Framework</a></p>
+</footer>
+
+</body>
+</html>

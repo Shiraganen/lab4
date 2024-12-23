@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Files</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Files</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>All Available Files</h1>
+            <p>Explore the list of files you have uploaded.</p>
+        </section>
+
+        <section class="content">
+            {% if files %}
+                <div class="file-list">
+                    {% for file in files %}
+                        <div class="file-item">
+                            <h2>{{ file.name }}</h2>
+                            <p>Uploaded on: {{ file.uploaded_at }}</p>
+                            <a href="{{ file.url }}" class="btn">Download</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>No files available.</p>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+</body>
+</html>
+
